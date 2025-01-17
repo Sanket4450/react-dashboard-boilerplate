@@ -2,7 +2,9 @@ import { routes } from '../router'
 import { NavLink } from 'react-router-dom'
 import './styles/Sidebar.css'
 
-export const Sidebar = () => {
+export const Sidebar = ({ sidebarOpen }) => {
+  if (!sidebarOpen) return null
+
   return (
     <div
       style={{
@@ -12,7 +14,7 @@ export const Sidebar = () => {
         flexDirection: 'column',
         gap: '18px',
         padding: '20px 12px',
-        backgroundColor: 'gray'
+        backgroundColor: 'gray',
       }}>
       {routes.map((route) => (
         <NavLink

@@ -3,8 +3,11 @@ import { Header } from './components/Header'
 import { Sidebar } from './components/Sidebar'
 import { routes } from './router'
 import { Route } from 'react-router-dom'
+import { useState } from 'react'
 
 function App() {
+  const [sidebarOpen, setSidebarOpen] = useState(true)
+
   return (
     <div
       style={{
@@ -13,9 +16,14 @@ function App() {
         display: 'flex',
         overflow: 'hidden',
       }}>
-      <Sidebar />
+      <Sidebar
+        sidebarOpen={sidebarOpen}
+      />
       <div style={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}>
-        <Header />
+        <Header
+          sidebarOpen={sidebarOpen}
+          setSidebarOpen={setSidebarOpen}
+        />
         <div
           style={{
             flexGrow: 1,

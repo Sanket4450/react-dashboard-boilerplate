@@ -1,6 +1,4 @@
-import React from 'react'
-
-export const Header = () => {
+export const Header = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <div
       style={{
@@ -10,12 +8,18 @@ export const Header = () => {
         backgroundColor: 'blue',
         display: 'flex',
         alignItems: 'center',
+        gap: '12px',
         padding: '0 20px',
         fontWeight: 'bold',
         color: 'white',
         fontSize: '20px',
       }}>
-      This is the Header
+      <button
+        style={{ padding: '8px', backgroundColor: 'gray' }}
+        onClick={() => setSidebarOpen(!sidebarOpen)}>
+        ꠵
+      </button>
+      <p>Welcome to Dashboard</p>
     </div>
   )
 }
